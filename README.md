@@ -1,6 +1,6 @@
 # docker-microsoft
 
-###Creating ACS with Swarm Cluster
+###Creating ACS with Swarm Cluster with Powershell
 
     Login-AzureRmAccount
     Get-AzureRmSubscription
