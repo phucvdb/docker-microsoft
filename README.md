@@ -22,5 +22,34 @@
     //Checking result via link of agentFQDN
     e.g: http://cliacsdemoagents.southeastasia.cloudapp.azure.com/
     
+###Demo 1
+    Composefile:
+    
+    web:
+        image: "yeasy/simple-web"
+        ports:
+            - "80:80"
+        restart: "always"
+        
+    user@ubuntu:~$docker-compose up -d
+    user@ubuntu:~docker ps
+    //browser to AGENTFQDN 
+    user@ubuntu:~docker-compose scale web=**3**
+        
+###Demo 2
+    Composefile:
+    web:
+        image: adtd/web:0.1
+        ports:
+            - "80:80"
+        links:
+            - rest:rest-demo-azure.marathon.mesos
+    rest:
+        image: adtd/rest:0.1
+        ports:
+            - "8080:8080"
+    
+    user@ubuntu:~/compose$ docker-compose up -d
+    //browser to AGENTFQDN 
     
     
