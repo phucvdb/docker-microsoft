@@ -52,4 +52,7 @@
     user@ubuntu:~/compose$ docker-compose up -d
     //browser to AGENTFQDN 
     
-    
+###Docker on Window OS
+    Install-WindowsFeature containers
+    New-Item -Type Directory -Path 'C:\Program Files\docker\'
+    Invoke-WebRequest https://aka.ms/tp5/b/dockerd -OutFile $env:ProgramFiles\docker\dockerd.exe
